@@ -1,0 +1,44 @@
+{
+  "executionRoleArn": "arn:aws:iam::284245693010:role/ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "environment": [
+        {
+          "name": "COLOR_TELLER_ENDPOINT",
+          "value": "colorteller-service.ecslab:8080"
+        },
+        {
+          "name": "TCP_ECHO_ENDPOINT",
+          "value": "colorteller-service.ecslab:8080"
+        }
+
+      ],
+      "name": "colorgateway",
+      "image": "284245693010.dkr.ecr.ap-southeast-1.amazonaws.com/colorgateway:latest",
+      "memory": 512,
+      "cpu": 256,
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/fargate",
+          "awslogs-region": "ap-southeast-1",
+          "awslogs-stream-prefix": "colorgateway"
+        }
+      },
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 8080,
+          "hostPort": 8080
+        }
+      ]
+    }
+  ],
+  "family": "colorgateway_fargate_task",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "memory": "512",
+  "cpu": "256"
+}
