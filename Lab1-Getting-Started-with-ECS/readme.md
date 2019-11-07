@@ -293,5 +293,5 @@ cdk deploy
 
 You have now created the ECS cluster and the task definitions. You can proceed to lab 2 where the tasks will be run as ECS services.
 
-Continue with [Lab2](https://github.com/tohwsw/aws-ecs-workshop/tree/master/Lab2-Create-Service-with-FarGate)
+Continue with [Lab2](https://github.com/aws-samples/aws-cdk-microservices-workshop/tree/master/Lab2-Create-Service-with-FarGate)
 

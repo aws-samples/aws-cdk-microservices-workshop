@@ -29,7 +29,7 @@ At the microservice level the application looks like this:
 
 ![img1]
 
-[img1]:https://github.com/tohwsw/aws-ecs-workshop/blob/master/Lab1-Getting-Started-with-ECS/img/microservicesapp.png
+[img1]:https://github.com/aws-samples/aws-cdk-microservices-workshop/blob/master/Lab1-Getting-Started-with-ECS/img/microservicesapp.png
 
 They shall be deployed using AWS Fargate, which allows you to run containers without managing servers. We shall deploy two instances of Gateway container and 2 instances of ColorTeller. ColorTeller containers register with a Route53 private hosted zone. ColorGateway discovers the ColorTeller via a service lookup to Route53. We will use an Application load balancer to route the requests to ColorGateway.
 
@@ -37,12 +37,12 @@ The lab architecture on AWS is shown below:
 
 ![img2]
 
-[img2]:https://github.com/tohwsw/aws-ecs-workshop/blob/master/Lab1-Getting-Started-with-ECS/img/1-lab-architecture.png
+[img2]:https://github.com/aws-samples/aws-cdk-microservices-workshop/blob/master/Lab1-Getting-Started-with-ECS/img/1-lab-architecture.png
 
 **Note**: 
 You'll need to have a working AWS account to use this lab.
 
-Start on [Lab1](https://github.com/tohwsw/aws-ecs-workshop/tree/master/Lab1-Getting-Started-with-ECS)
+Start on [Lab1](https://github.com/aws-samples/aws-cdk-microservices-workshop/tree/master/Lab1-Getting-Started-with-ECS)
 
 ## License
 
