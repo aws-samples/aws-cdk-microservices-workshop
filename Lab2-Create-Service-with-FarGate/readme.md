@@ -73,7 +73,7 @@ cdk deploy
 
 ```
 
-An ALB DNS name will be shown as the output. Click on the link to view the output it in browser.
+An ALB DNS name will be shown as the output. Click on the link to view the output it in browser. Remember to append the context path /color to the DNS value.
 
 ## 9. Testing our service deployments from the console and the ALB
   
