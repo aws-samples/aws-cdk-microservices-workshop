@@ -38,6 +38,7 @@ From your project directory run:
 
 ```
 cd ecs-workshop
+npm install @types/node
 
 ```
 
@@ -87,41 +88,41 @@ import cdk = require('@aws-cdk/core');
 import elbv2 = require('@aws-cdk/aws-elasticloadbalancingv2');
 import ec2 = require('@aws-cdk/aws-ec2');
 import ecs = require('@aws-cdk/aws-ecs');
-import { DockerImageAsset } = require('@aws-cdk/aws-ecr-assets');
+import { DockerImageAsset } from '@aws-cdk/aws-ecr-assets';
 import iam = require('@aws-cdk/aws-iam');
 import logs = require('@aws-cdk/aws-logs');
+import path = require('path');
 
 export class EcsWorkshopStack extends cdk.Stack {
   constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-	  const vpc = new ec2.Vpc(this, 'VPC');
-    
+    const vpc = new ec2.Vpc(this, 'VPC');
+
     const colortellerSecGrp = new ec2.SecurityGroup(this, "colortellerSecurityGroup", {
       allowAllOutbound: true,
       securityGroupName: 'colortellerSecurityGroup',
       vpc: vpc
     });
-    
+
     colortellerSecGrp.connections.allowFromAnyIpv4(ec2.Port.tcp(8080))
-    
+
     const colorgatewaySecGrp = new ec2.SecurityGroup(this, "colorgatewaySecurityGroup", {
       allowAllOutbound: true,
       securityGroupName: 'colorgatewaySecurityGroup',
       vpc: vpc
     });
-    
+
     colorgatewaySecGrp.connections.allowFromAnyIpv4(ec2.Port.tcp(8080))
-    
+
     const cluster = new ecs.Cluster(this, 'Cluster', {
       vpc: vpc
     });
-    
-    cluster.addDefaultCloudMapNamespace({name: 'ecslab'})
 
-}
-}
+    cluster.addDefaultCloudMapNamespace({ name: 'ecslab' })
 
+  }
+}
 ```
 
 Let’s deploy:
