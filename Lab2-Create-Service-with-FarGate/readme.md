@@ -85,6 +85,19 @@ We can also test from the ALB itself. To find the DNS A record for your ALB, nav
 
 ```
 
+## 10. Cleanup
+
+First, let’s delete the resources created by the CDK code:
+
+```
+cdk destroy
+
+```
+
+You can double check to see if the CloudFormation stack is successfully deleted.
+
+Then, go and delete the Cloud9 instance.
+
 ## That's a wrap!
 
 Congratulations! You've deployed an ECS Cluster with a microservice application!
