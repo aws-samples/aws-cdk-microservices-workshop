@@ -5,7 +5,11 @@
 
 ## 1. Preparing CDK in Cloud9
 
-Please bring up a Cloud9 instance by going to https://ap-southeast-1.console.aws.amazon.com/cloud9/home/product. Cloud9 will provide you terminal access to run AWS CLI.
+Please bring up a Cloud9 instance by going to https://ap-southeast-1.console.aws.amazon.com/cloud9/home/product. Cloud9 will provide you terminal access to run AWS CLI. Click on "Create Environment". Provide any environment name and accept the rest of the default parameters.
+
+![img1]
+
+[img1]:https://github.com/aws-samples/aws-cdk-microservices-workshop/blob/master/Lab1-Getting-Started-with-ECS/img/cloud9.png
 
 First create the AWS CDK Toolkit. The toolkit is a command-line utility which allows you to work with CDK apps.
 
